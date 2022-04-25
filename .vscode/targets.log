@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Sun Apr 24 20:35:19 2022
+# Make data base, printed on Mon Apr 25 18:39:36 2022
 
 # Variables
 
@@ -22,8 +22,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 @D = $(patsubst %/,%,$(dir $@))
 # automatic
 @F = $(notdir $@)
+ 
 # makefile
-CURDIR := /Users/jinkim2/get_next_line
+CURDIR := /Users/jinkim2/gnl
 # makefile
 SHELL = /bin/sh
 # environment
@@ -31,10 +32,9 @@ VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupp
 # environment
 _ = /usr/bin/make
 # makefile (from `Makefile', line 14)
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g3 -fsanitize=address
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
- 
 # makefile (from `Makefile', line 33)
 .PHONY = all clean fclean re
 # environment
@@ -42,17 +42,17 @@ VSCODE_NODE_CACHED_DATA_DIR =
 # environment
 VERBOSE_LOGGING = true
 # environment
-VSCODE_LOGS = /Users/jinkim2/Library/Application Support/Code/logs/20220424T192750
+VSCODE_LOGS = /Users/jinkim2/Library/Application Support/Code/logs/20220425T183928
 # makefile (from `Makefile', line 17)
 OBJS = ${SRCS:.c=.o}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cqsm0035yd/T/vscode-ipc-8e1befd0-f5dc-4e71-87cb-aad4450743c1.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cqsm0035yd/T/vscode-ipc-34fa49d9-28a2-469a-b350-d822bfe22e82.sock
 # environment
 PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-LaunchInstanceID = 334DF5B4-FF91-46A7-8CD5-807B711A6913
+LaunchInstanceID = FBFBF859-7842-4785-9F4B-F4180AA8FF77
 # environment
 VSCODE_LOG_STACK = false
 # environment
@@ -60,11 +60,11 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.2bBU0D1PpO/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.bF3pz03UQt/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
-PWD = /Users/jinkim2/get_next_line
+PWD = /Users/jinkim2/gnl
 # environment
 HOME = /Users/jinkim2
 # default
@@ -126,7 +126,7 @@ MFLAGS = -Rrqp
 # environment
 MAIL = jinkim2@student.42seoul.kr
 # environment
-XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000001.Electron
+XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000003.Electron
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -156,7 +156,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 2401
+VSCODE_PID = 3573
 # variable set hash-table stats:
 # Load=72/1024=7%, Rehash=0, Collisions=4/100=4%
 
@@ -166,9 +166,9 @@ VSCODE_PID = 2401
 
 # Directories
 
-# . (device 16777225, inode 2321747): 11 files, no impossibilities.
+# . (device 16777225, inode 2332219): 16 files, no impossibilities.
 
-# 11 files, no impossibilities in 1 directories.
+# 16 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -194,13 +194,12 @@ all: get_next_line.a
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-24 20:35:18
+#  Last modified 2022-04-25 15:45:34
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
- 
 fclean: clean
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -212,7 +211,7 @@ fclean: clean
 # Not a target:
 get_next_line_utils.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-24 20:34:43
+#  Last modified 2022-04-25 15:47:07
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -240,7 +239,7 @@ clean:
 # Not a target:
 get_next_line.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-24 20:34:43
+#  Last modified 2022-04-25 15:47:07
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -248,7 +247,7 @@ get_next_line.o:
 
 get_next_line.a: get_next_line.o get_next_line_utils.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-04-24 20:34:43
+#  Last modified 2022-04-25 15:47:07
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -270,6 +269,6 @@ get_next_line.a: get_next_line.o get_next_line_utils.o
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sun Apr 24 20:35:19 2022
+# Finished Make data base on Mon Apr 25 18:39:36 2022
 
  
