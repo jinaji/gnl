@@ -6,7 +6,7 @@
 /*   By: jinkim2 <jinkim2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 16:05:04 by jinkim2           #+#    #+#             */
-/*   Updated: 2022/04/25 19:39:18 by jinkim2          ###   ########seoul.kr  */
+/*   Updated: 2022/04/25 21:08:23 by jinkim2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 
+char	*ft_clean(char	*buff, size_t len);
 size_t	ft_strlen(char *s);
 int		get_index(char *left);
 char	*ft_strjoin(char *s1, char *s2);

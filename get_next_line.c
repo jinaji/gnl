@@ -64,11 +64,11 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || fd >= OPEN_MAX)
 		return (0);
-	read_size = BUFFER_SIZE;
 	buff = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
 	if (!buff)
 		return (0);
-	while (read_size == BUFFER_SIZE && get_index(left[fd]))
+	read_size = BUFFER_SIZE;
+	while (read_size == BUFFER_SIZE)
 	{
 		read_size = read(fd, buff, BUFFER_SIZE);
 		if (read_size == -1 || read_size == 0)
@@ -76,8 +76,10 @@ char	*get_next_line(int fd)
 			free(buff);
 			return (0);
 		}
+		buff[read_size] = '\0';
 		left[fd] = ft_strjoin(left[fd], buff);
-		if (get_index(left[fd]))
+		buff = ft_clean(buff, BUFFER_SIZE);
+		if (get_index(left[fd]) != -1)
 			return (get_return(left[fd]));
 	}
 	return (buff);

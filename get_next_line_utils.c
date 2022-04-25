@@ -6,12 +6,22 @@
 /*   By: jinkim2 <jinkim2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 16:03:47 by jinkim2           #+#    #+#             */
-/*   Updated: 2022/04/25 20:31:11 by jinkim2          ###   ########seoul.kr  */
+/*   Updated: 2022/04/25 21:08:39 by jinkim2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
+
+char	*ft_clean(char	*buff, size_t len)
+{
+	size_t	i;
+
+	i = 0;
+	while (len > i)
+		buff[i++] = 0;
+	return (buff);
+}
 
 size_t	ft_strlen(char *s)
 {
