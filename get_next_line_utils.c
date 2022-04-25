@@ -6,7 +6,7 @@
 /*   By: jinkim2 <jinkim2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 16:03:47 by jinkim2           #+#    #+#             */
-/*   Updated: 2022/04/25 19:39:26 by jinkim2          ###   ########seoul.kr  */
+/*   Updated: 2022/04/25 20:31:11 by jinkim2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	get_index(char *left)
 			return (i);
 		i++;
 	}
-	return (i);
+	return (-1);
 }
 
 char	*ft_strjoin(char *s1, char *s2)
@@ -65,7 +65,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (arr);
 }
 
-char	*ft_strndup(char *s1, int len)
+char	*ft_strndup(char *left, int len)
 {
 	int		i;
 	char	*arr;
@@ -74,9 +74,9 @@ char	*ft_strndup(char *s1, int len)
 	arr = (char *)malloc(sizeof(char) * len + 1);
 	if (!arr)
 		return (0);
-	while (s1[i])
+	while (left[i])
 	{
-		arr[i] = s1[i];
+		arr[i] = left[i];
 		i++;
 	}
 	arr[i] = '\0';

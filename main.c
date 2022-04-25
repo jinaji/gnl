@@ -8,7 +8,7 @@ int main()
     int fd;
     char *str;
 
-    fd = open("41_with_nl", O_RDONLY);
+    fd = open("big_line_no_nl", O_RDONLY);
     str = get_next_line(fd);
     printf("%s\n", str);
     return 0;
