@@ -12,12 +12,7 @@
 
 #include "get_next_line.h"
 #include <unistd.h>
-
-char	*save_static(char *left, char *buff)
-{
-	ft_strjoin(left, buff);
-	return (left);
-}
+#include <stdio.h>
 
 char	*delete_static(char *left)
 {
@@ -27,14 +22,14 @@ char	*delete_static(char *left)
 	char	*new;
 
 	i = 0;
-	j = 0;
 	while (left[i] == '\n')
 		i++;
-	len = ft_strlen(left) - i;
+	len = ft_strlen(left) - i - 1; // ??
 	new = (char *)malloc(sizeof(char) * (len + 1));
 	if (!new)
 		return (0);
 	i += 1;
+	j = 0;
 	while (left[i])
 		new[j++] = left[i++];
 	new[j] = '\0';
@@ -65,7 +60,7 @@ char	*get_return(char *left)
 		if (left[i] == '\n')
 		{
 			tmp = ft_strndup(left, idx);
-			delete_static(left);
+			left = delete_static(left);
 			return (tmp);
 		}
 		i++;
@@ -90,8 +85,9 @@ char	*get_next_line(int fd)
 		free(buff);
 		return (0);
 	}
-	left[fd] = save_static(left[fd], buff);
-	if (ft_strchr(left[fd], '\n'))
+	left[fd] = ft_strjoin(left[fd], buff);
+	if (!(ft_strchr(left[fd], '\n')))
+		return (buff);
+	else
 		return (get_return(left[fd]));
-	return (0);
 }
