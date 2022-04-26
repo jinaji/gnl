@@ -6,7 +6,7 @@
 /*   By: jinkim2 <jinkim2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 16:03:47 by jinkim2           #+#    #+#             */
-/*   Updated: 2022/04/25 21:08:39 by jinkim2          ###   ########seoul.kr  */
+/*   Updated: 2022/04/26 16:02:28 by jinkim2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	get_index(char *left)
 	while (left[i])
 	{
 		if (left[i] == '\n')
-			return (i);
+			return (++i);
 		i++;
 	}
 	return (-1);
