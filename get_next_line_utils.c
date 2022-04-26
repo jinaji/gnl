@@ -6,22 +6,12 @@
 /*   By: jinkim2 <jinkim2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 16:03:47 by jinkim2           #+#    #+#             */
-/*   Updated: 2022/04/25 21:08:39 by jinkim2          ###   ########seoul.kr  */
+/*   Updated: 2022/04/26 16:03:30 by jinkim2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
-
-char	*ft_clean(char	*buff, size_t len)
-{
-	size_t	i;
-
-	i = 0;
-	while (len > i)
-		buff[i++] = 0;
-	return (buff);
-}
 
 size_t	ft_strlen(char *s)
 {
@@ -47,15 +37,33 @@ int	get_index(char *left)
 	return (-1);
 }
 
+char	*ft_strndup(char *left, int len)
+{
+	int		i;
+	char	*arr;
+
+	i = 0;
+	arr = (char *)malloc(sizeof(char) * len + 2);
+	if (!arr)
+		return (0);
+	while (left[i])
+	{
+		arr[i] = left[i];
+		i++;
+	}
+	arr[i] = '\0';
+	return (arr);
+}
+
 char	*ft_strjoin(char *s1, char *s2)
 {
-	char	*arr;
-	int		len;
-	int		i;
-	int		j;
+	char		*arr;
+	size_t		len;
+	size_t		i;
+	size_t		j;
 
 	if (!s1)
-		return (s2);
+		s1 = ft_strndup("", 1);
 	if (!s2)
 		return (0);
 	len = ft_strlen(s1) + ft_strlen(s2);
@@ -72,23 +80,6 @@ char	*ft_strjoin(char *s1, char *s2)
 	while (s2[j])
 		arr[i++] = s2[j++];
 	arr[i] = '\0';
-	return (arr);
-}
-
-char	*ft_strndup(char *left, int len)
-{
-	int		i;
-	char	*arr;
-
-	i = 0;
-	arr = (char *)malloc(sizeof(char) * len + 1);
-	if (!arr)
-		return (0);
-	while (left[i])
-	{
-		arr[i] = left[i];
-		i++;
-	}
-	arr[i] = '\0';
+	free (s1);
 	return (arr);
 }

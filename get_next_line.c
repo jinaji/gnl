@@ -22,11 +22,10 @@ char	*delete_static(char *left)
 	char	*new;
 
 	i = get_index(left);
-	len = ft_strlen(left) - i - 1;
+	len = ft_strlen(left) - i;
 	new = (char *)malloc(sizeof(char) * (len + 1));
 	if (!new)
 		return (0);
-	i += 1;
 	j = 0;
 	while (left[i])
 		new[j++] = left[i++];
@@ -45,7 +44,7 @@ char	*get_return(char *left)
 	idx = get_index(left);
 	while (left[i])
 	{
-		if (idx)
+		if (idx != -1)
 		{
 			tmp = ft_strndup(left, idx);
 			left = delete_static(left);
@@ -74,13 +73,14 @@ char	*get_next_line(int fd)
 		if (read_size == -1 || read_size == 0)
 		{
 			free(buff);
+//			if (read_size == 0 && left[fd])
+//				return (left[fd]);
 			return (0);
 		}
 		buff[read_size] = '\0';
 		left[fd] = ft_strjoin(left[fd], buff);
-		buff = ft_clean(buff, BUFFER_SIZE);
 		if (get_index(left[fd]) != -1)
 			return (get_return(left[fd]));
 	}
-	return (buff);
+	return (left[fd]);
 }

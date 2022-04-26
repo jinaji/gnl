@@ -8,8 +8,12 @@ int main()
     int fd;
     char *str;
 
-    fd = open("big_line_no_nl", O_RDONLY);
-    str = get_next_line(fd);
-    printf("%s\n", str);
+    fd = open("test.txt", O_RDONLY);
+    str = "1";
+    while (str)
+    {
+        str = get_next_line(fd);
+        printf("%s\n", str);
+    }
     return 0;
 }
