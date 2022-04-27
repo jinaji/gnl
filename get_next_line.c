@@ -31,37 +31,19 @@ char	*delete_static(char *left)
 		new[j++] = left[i++];
 	new[j] = '\0';
 	free (left);
+	left = NULL;
 	return (new);
 }
 
 char	*get_return(char *left)
 {
-	int		i;
 	int		idx;
 	char	*tmp;
 
-	i = 0;
 	idx = get_index(left);
-	while (left[i])
-	{
-		if (idx != -1)
-		{
-			tmp = ft_strndup(left, idx);
-			left = delete_static(left);
-			return (tmp);
-		}
-		i++;
-	}
-	return (left);
-}
-
-char	*read_line(char	*left, int fd)
-{
-	char	*buff;
-
-	buff = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
-	if (!buff)
-		return (0);
+	tmp = ft_strndup(left, idx);
+	left = delete_static(left);
+	return (tmp);
 }
 
 char	*get_next_line(int fd)
@@ -69,26 +51,35 @@ char	*get_next_line(int fd)
 	static char	*left[OPEN_MAX];
 	char		*buff;
 	int			read_size;
+	char		*tmp;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || fd >= OPEN_MAX)
 		return (0);
 	buff = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
 	if (!buff)
 		return (0);
-	read_size = BUFFER_SIZE;
-	while (read_size == BUFFER_SIZE)
+	read_size = 1;
+	while (read_size && (get_index(left[fd]) == -1))
 	{
 		read_size = read(fd, buff, BUFFER_SIZE);
-		if (read_size == -1 || read_size == 0)
+		if (read_size == -1)
 		{
 			free(buff);
 			return (0);
 		}
+		if (read_size == 0)
+		{
+			free (buff);
+			tmp = ft_strndup(left[fd], ft_strlen(left[fd]));
+			left[fd] = NULL;
+			return (tmp);
+		}
 		buff[read_size] = '\0';
 		left[fd] = ft_strjoin(left[fd], buff);
-		buff = ft_clean(buff, BUFFER_SIZE);
 		if (get_index(left[fd]) != -1)
 			return (get_return(left[fd]));
 	}
-	return (left);
+	if (get_index(left[fd]) != -1)
+		return (get_return(left[fd]));
+	return (left[fd]);
 }

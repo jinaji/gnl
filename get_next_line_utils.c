@@ -6,28 +6,20 @@
 /*   By: jinkim2 <jinkim2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 16:03:47 by jinkim2           #+#    #+#             */
-/*   Updated: 2022/04/26 16:02:28 by jinkim2          ###   ########seoul.kr  */
+/*   Updated: 2022/04/27 15:37:21 by jinkim2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 
-char	*ft_clean(char	*buff, size_t len)
-{
-	size_t	i;
-
-	i = 0;
-	while (len > i)
-		buff[i++] = 0;
-	return (buff);
-}
-
 size_t	ft_strlen(char *s)
 {
 	size_t	i;
 
 	i = 0;
+	if (!s)
+		return (0);
 	while (s[i])
 		i++;
 	return (0);
@@ -38,6 +30,8 @@ int	get_index(char *left)
 	int	i;
 
 	i = 0;
+	if (!left)
+		return (-1);
 	while (left[i])
 	{
 		if (left[i] == '\n')
@@ -47,17 +41,35 @@ int	get_index(char *left)
 	return (-1);
 }
 
+char	*ft_strndup(char *left, int len)
+{
+	int		i;
+	char	*arr;
+
+	i = 0;
+	arr = (char *)malloc(sizeof(char) * (len + 1));
+	if (!arr)
+		return (0);
+	while (left[i])
+	{
+		arr[i] = left[i];
+		i++;
+	}
+	arr[i] = '\0';
+	return (arr);
+}
+
 char	*ft_strjoin(char *s1, char *s2)
 {
-	char	*arr;
-	int		len;
-	int		i;
-	int		j;
+	char		*arr;
+	size_t		len;
+	size_t		i;
+	size_t		j;
 
 	if (!s1)
-		return (s2);
+		s1 = ft_strndup("", 1);
 	if (!s2)
-		return (0);
+		return (s1);
 	len = ft_strlen(s1) + ft_strlen(s2);
 	arr = (char *)malloc(sizeof(char) * len + 1);
 	if (!arr)
@@ -72,23 +84,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	while (s2[j])
 		arr[i++] = s2[j++];
 	arr[i] = '\0';
-	return (arr);
-}
-
-char	*ft_strndup(char *left, int len)
-{
-	int		i;
-	char	*arr;
-
-	i = 0;
-	arr = (char *)malloc(sizeof(char) * len + 1);
-	if (!arr)
-		return (0);
-	while (left[i])
-	{
-		arr[i] = left[i];
-		i++;
-	}
-	arr[i] = '\0';
+	free (s1);
+	s1 = NULL;
 	return (arr);
 }

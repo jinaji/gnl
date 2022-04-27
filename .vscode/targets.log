@@ -7,11 +7,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
  
-make: *** No rule to make target `get_next_line.o', needed by `get_next_line.a'
-.  Stop.
 
-
-# Make data base, printed on Tue Apr 26 17:25:47 2022
+# Make data base, printed on Wed Apr 27 15:18:32 2022
+ 
 
 # Variables
 
@@ -40,21 +38,19 @@ MAKEFILE_LIST :=  Makefile
 # makefile (from `Makefile', line 33)
 .PHONY = all clean fclean re
 # environment
-VSCODE_NODE_CACHED_DATA_DIR = /Users/jinkim2/Library/Application Support/Code/CachedData/6ab598523be7a800d7f3eb4d92d7ab9a66069390
+VSCODE_NODE_CACHED_DATA_DIR = 
 # environment
 VERBOSE_LOGGING = true
 # environment
-VSCODE_LOGS = /Users/jinkim2/Library/Application Support/Code/logs/20220426T172539
+VSCODE_LOGS = /Users/jinkim2/Library/Application Support/Code/logs/20220427T151827
 # makefile (from `Makefile', line 17)
 OBJS = ${SRCS:.c=.o}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cqsm0035yd/T/vscode-ipc-8cd042a3-6b80-4748-bd13-e316c50f6a21.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cqsm0035yd/T/vscode-ipc-5f2c864d-587c-450f-873b-2b89cf3d20ea.sock
 # environment
 PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
-# environment
-LaunchInstanceID = 87845D80-88C9-4CFA-AE5E-686A805EBF1B
 # environment
 VSCODE_LOG_STACK = false
 # environment
@@ -62,7 +58,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.IOkCKd1RQr/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.ZX7PLDCWFB/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -128,15 +124,13 @@ MFLAGS = -Rrqp
 # environment
 MAIL = jinkim2@student.42seoul.kr
 # environment
-XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000002.Electron
+XPC_SERVICE_NAME = com.microsoft.VSCode.1048
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
 # environment
 __CF_USER_TEXT_ENCODING = 0x197CD:0x3:0x33
-# environment
-COMMAND_MODE = unix2003
 # default
 MAKEFILES := 
 # automatic
@@ -145,8 +139,6 @@ MAKEFILES :=
 PAGER = less
 # environment
 LC_ALL = C
-# environment
-SECURITYSESSIONID = 186a6
 # automatic
 ^F = $(notdir $^)
 # default
@@ -158,9 +150,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 2895
+VSCODE_PID = 1466
 # variable set hash-table stats:
-# Load=72/1024=7%, Rehash=0, Collisions=4/100=4%
+# Load=69/1024=7%, Rehash=0, Collisions=4/97=4%
 
 # Pattern-specific Variable Values
 
@@ -168,9 +160,10 @@ VSCODE_PID = 2895
 
 # Directories
 
-# . (device 16777225, inode 2332219): 13 files, no impossibilities.
+ 
+# . (device 16777225, inode 2332219): 18 files, no impossibilities.
 
-# 13 files, no impossibilities in 1 directories.
+# 18 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -182,7 +175,8 @@ all: get_next_line.a
 #  Command-line target.
 #  Implicit rule search has been done.
 #  File does not exist.
-#  File has not been updated.
+#  File has been updated.
+#  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
@@ -211,9 +205,12 @@ fclean: clean
 
 # Not a target:
 get_next_line_utils.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-04-26 18:03:40
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
 .DEFAULT:
@@ -237,15 +234,17 @@ clean:
 # Not a target:
 get_next_line.o:
 #  Implicit rule search has been done.
-#  File does not exist.
-#  File has not been updated.
+#  Last modified 2022-04-26 18:03:40
+#  File has been updated.
+#  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 get_next_line.a: get_next_line.o get_next_line_utils.o
 #  Implicit rule search has not been done.
-#  File does not exist.
-#  File has not been updated.
+#  Last modified 2022-04-26 18:03:41
+#  File has been updated.
+#  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 #  commands to execute (from `Makefile', line 23):
@@ -265,6 +264,6 @@ get_next_line.a: get_next_line.o get_next_line_utils.o
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Tue Apr 26 17:25:47 2022
+# Finished Make data base on Wed Apr 27 15:18:32 2022
 
  
