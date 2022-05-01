@@ -1,0 +1,8 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/jinkim2/gnl/gnl3/gnl3 복사본'
+gcc -Wall -Werror -Wextra -g3 -fsanitize=address   -c -o get_next_line.o get_next_line.c
+ 
+gcc -Wall -Werror -Wextra -g3 -fsanitize=address   -c -o get_next_line_utils.o get_next_line_utils.c
+ar crs get_next_line.a get_next_line.o get_next_line_utils.o
+make: Leaving directory `/Users/jinkim2/gnl/gnl3/gnl3 복사본'
+ 

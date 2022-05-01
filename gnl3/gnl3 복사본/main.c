@@ -9,21 +9,11 @@ int main()
     char *str;
 
     fd = open("test.txt", O_RDONLY);
+    str = "1";
     {
-        printf("---------------------------------\n\n");
-        str = get_next_line(fd);
-        printf("main %s\n", str);
-        printf("---------------------------------\n\n");
-        str = get_next_line(fd);
-        printf("main %s\n", str);
-        printf("---------------------------------\n\n");
-         str = get_next_line(fd);
-        printf("main %s\n", str);
- /*          printf("---------------------------------\n\n");
-       str = get_next_line(fd);
-        printf("main %s\n", str);
-        str = get_next_line(fd);
-        printf("main %s\n", str);*/
+    str = get_next_line(fd);
+    printf("%s\n", str);
+    
     }
     return 0;
 }

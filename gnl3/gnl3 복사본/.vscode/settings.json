@@ -1,0 +1,10 @@
+{
+	"makefile.extensionOutputFolder": "./.vscode",
+	"makefile.launchConfigurations": [
+		{
+			"cwd": "/Users/jinkim2/gnl/gnl3/gnl3 복사본",
+			"binaryPath": "/Users/jinkim2/gnl/gnl3/gnl3 복사본/a.out",
+			"binaryArgs": []
+		}
+	]
+}

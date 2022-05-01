@@ -6,7 +6,7 @@
 #    By: jinkim2 <jinkim2@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/24 19:55:55 by jinkim2           #+#    #+#              #
-#    Updated: 2022/04/25 15:13:02 by jinkim2          ###   ########seoul.kr   #
+#    Updated: 2022/05/01 14:43:07 by jinkim2          ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,9 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar crs $(NAME) $^
+
+debug:
+	$(CC) -g $(SRCS) main.c
 
 clean:
 	rm -f $(OBJS)

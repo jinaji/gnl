@@ -6,7 +6,7 @@
 /*   By: jinkim2 <jinkim2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 17:15:11 by jinkim2           #+#    #+#             */
-/*   Updated: 2022/04/30 17:09:55 by jinkim2          ###   ########seoul.kr  */
+/*   Updated: 2022/05/01 21:29:52 by jinkim2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,22 @@ size_t	ft_strlen(char	*str)
 	return (i);
 }
 
-int	ft_newline(char	*str)
+int	get_index(char *left)
+{
+	int	idx;
+
+	idx = 0;
+	while (left[idx])
+	{
+		if (left[idx] == '\n')
+			break ;
+		idx++;
+	}
+	idx += 1;
+	return (idx);
+}
+
+int	is_newline(char	*str)
 {
 	int	i;
 
@@ -49,9 +64,8 @@ char	*ft_strjoin(char *left, char *buff)
 	if (!left)
 		left = ft_strndup("", 1);
 	if (!buff)
-		return (ft_strndup(buff, ft_strlen(buff)));
+		return (0);
 	len = ft_strlen(left) + ft_strlen(buff);
-	printf("join len = %zu\nbefore join left : %s\n before join buff %s\n", len, left, buff);
 	str = (char *)malloc(sizeof(char) * len + 1);
 	if (!str)
 		return (0);
@@ -63,12 +77,7 @@ char	*ft_strjoin(char *left, char *buff)
 	}
 	j = 0;
 	while (buff[j])
-	{
-		str[i] = buff[j];
-		i++;
-		j++;
-	}
-	printf("after join : %s\n", str);
+		str[i++] = buff[j++];
 	str[i] = '\0';
 	return (str);
 }
