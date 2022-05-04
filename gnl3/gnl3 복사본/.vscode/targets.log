@@ -7,14 +7,13 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
  
-make: *** No rule to make target `get_next_line.o', needed by `get_next_line.a'.  Stop.
 
-
-# Make data base, printed on Sun May  1 20:25:34 2022
+# Make data base, printed on Wed May  4 18:32:07 2022
 
 # Variables
 
 # automatic
+ 
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
@@ -29,7 +28,7 @@ CURDIR := /Users/jinkim2/gnl/gnl3/gnl3 복사본
 # makefile
 SHELL = /bin/sh
 # environment
-VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"ko","availableLanguages":{"*":"ko"},"_languagePackId":"4d9ea908de3abc88ba2967650c12e18e.ko","_translationsConfigFile":"/Users/jinkim2/Library/Application Support/Code/clp/4d9ea908de3abc88ba2967650c12e18e.ko/tcf.json","_cacheRoot":"/Users/jinkim2/Library/Application Support/Code/clp/4d9ea908de3abc88ba2967650c12e18e.ko","_resolvedLanguagePackCoreLocation":"/Users/jinkim2/Library/Application Support/Code/clp/4d9ea908de3abc88ba2967650c12e18e.ko/6ab598523be7a800d7f3eb4d92d7ab9a66069390","_corruptedFile":"/Users/jinkim2/Library/Application Support/Code/clp/4d9ea908de3abc88ba2967650c12e18e.ko/corrupted.info","_languagePackSupport":true}
 # environment
 _ = /usr/bin/make
 # makefile (from `Makefile', line 14)
@@ -43,17 +42,15 @@ VSCODE_NODE_CACHED_DATA_DIR =
 # environment
 VERBOSE_LOGGING = true
 # environment
-VSCODE_LOGS = /Users/jinkim2/Library/Application Support/Code/logs/20220501T202527
+VSCODE_LOGS = /Users/jinkim2/Library/Application Support/Code/logs/20220504T183203
 # makefile (from `Makefile', line 17)
 OBJS = ${SRCS:.c=.o}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cqsm0035yd/T/vscode-ipc-c124439a-19d4-490c-aabf-debb782588cb.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cqsm0035yd/T/vscode-ipc-3d133452-e950-487f-afe5-0cb07c874c28.sock
 # environment
 PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
-# environment
-LaunchInstanceID = 90CE33AE-3372-47DF-8017-FDD29A6F418E
 # environment
 VSCODE_LOG_STACK = false
 # environment
@@ -61,7 +58,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.ZeSDMu4j92/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.yiWgXt3UeL/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -78,7 +75,6 @@ APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 ZSH = /Users/jinkim2/.oh-my-zsh
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
- 
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
@@ -128,15 +124,13 @@ MFLAGS = -Rrqp
 # environment
 MAIL = jinkim2@student.42seoul.kr
 # environment
-XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000001.Electron
+XPC_SERVICE_NAME = com.microsoft.VSCode.2160
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
 # environment
 __CF_USER_TEXT_ENCODING = 0x197CD:0x3:0x33
-# environment
-COMMAND_MODE = unix2003
 # default
 MAKEFILES := 
 # automatic
@@ -145,8 +139,6 @@ MAKEFILES :=
 PAGER = less
 # environment
 LC_ALL = C
-# environment
-SECURITYSESSIONID = 186a6
 # automatic
 ^F = $(notdir $^)
 # default
@@ -158,9 +150,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 786
+VSCODE_PID = 4544
 # variable set hash-table stats:
-# Load=72/1024=7%, Rehash=0, Collisions=4/100=4%
+# Load=69/1024=7%, Rehash=0, Collisions=4/97=4%
 
 # Pattern-specific Variable Values
 
@@ -168,9 +160,9 @@ VSCODE_PID = 786
 
 # Directories
 
-# . (device 16777225, inode 2349480): 13 files, no impossibilities.
+# . (device 16777225, inode 2349480): 18 files, no impossibilities.
 
-# 13 files, no impossibilities in 1 directories.
+# 18 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -182,11 +174,13 @@ all: get_next_line.a
 #  Command-line target.
 #  Implicit rule search has been done.
 #  File does not exist.
-#  File has not been updated.
+#  File has been updated.
+#  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
+ 
 .SUFFIXES:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -219,9 +213,12 @@ fclean: clean
 
 # Not a target:
 get_next_line_utils.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-05-03 20:02:05
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
 .DEFAULT:
@@ -245,15 +242,17 @@ clean:
 # Not a target:
 get_next_line.o:
 #  Implicit rule search has been done.
-#  File does not exist.
-#  File has not been updated.
+#  Last modified 2022-05-03 20:02:04
+#  File has been updated.
+#  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 get_next_line.a: get_next_line.o get_next_line_utils.o
 #  Implicit rule search has not been done.
-#  File does not exist.
-#  File has not been updated.
+#  Last modified 2022-05-03 20:02:05
+#  File has been updated.
+#  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 #  commands to execute (from `Makefile', line 23):
@@ -273,6 +272,6 @@ get_next_line.a: get_next_line.o get_next_line_utils.o
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sun May  1 20:25:34 2022
+# Finished Make data base on Wed May  4 18:32:07 2022
 
  

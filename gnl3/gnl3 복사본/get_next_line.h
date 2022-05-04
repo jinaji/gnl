@@ -6,7 +6,7 @@
 /*   By: jinkim2 <jinkim2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 17:15:07 by jinkim2           #+#    #+#             */
-/*   Updated: 2022/05/01 19:24:46 by jinkim2          ###   ########seoul.kr  */
+/*   Updated: 2022/05/04 18:50:08 by jinkim2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		is_newline(char *str);
 char	*ft_strjoin(char *left, char *buff);
 char	*ft_strndup(char *left, int idx);
 
-int		get_index(char *left);
+size_t	get_index(char *left);
 char	*delete_static(char *left);
 char	*get_return(char *left);
 char	*get_next_line(int fd);

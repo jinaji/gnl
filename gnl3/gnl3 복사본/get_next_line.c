@@ -6,7 +6,7 @@
 /*   By: jinkim2 <jinkim2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 17:15:09 by jinkim2           #+#    #+#             */
-/*   Updated: 2022/05/01 21:32:44 by jinkim2          ###   ########seoul.kr  */
+/*   Updated: 2022/05/04 19:47:48 by jinkim2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*delete_static(char	*left)
 	int		len;
 	char	*new;
 
+	if (!left)
+		return (0);
 	idx = get_index(left);
 	len = ft_strlen(left) - idx;
 	new = (char *)malloc(sizeof(char) * len + 1);
@@ -37,13 +39,18 @@ char	*delete_static(char	*left)
 
 char	*get_return(char *left)
 {
-	int		idx;
-	char	*tmp;
+	size_t		idx;
+	char		*tmp;
 
 	if (!left)
 		return (0);
 	idx = get_index(left);
 	tmp = ft_strndup(left, idx);
+	if (*tmp == 0)
+	{
+		free (tmp);
+		return (0);
+	}
 	return (tmp);
 }
 
@@ -59,14 +66,19 @@ char	*get_next_line(int fd)
 	buff = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
 	if (!buff)
 		return (0);
-	while (!(is_newline(left[fd])))
+	while (!is_newline(left[fd]))
 	{
 		read_size = read(fd, buff, BUFFER_SIZE);
 		if (read_size == -1 || read_size == 0)
 		{
 			free (buff);
 			if (read_size == 0)
-				return (get_return(left[fd]));
+			{
+				tmp = get_return(left[fd]);
+				free (left[fd]);
+				left[fd] = 0;
+				return (tmp);
+			}
 			return (0);
 		}
 		buff[read_size] = '\0';
