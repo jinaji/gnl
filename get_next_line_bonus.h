@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jinkim2 <jinkim2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/28 17:15:07 by jinkim2           #+#    #+#             */
-/*   Updated: 2022/05/09 17:23:53 by jinkim2          ###   ########seoul.kr  */
+/*   Created: 2022/05/07 19:04:51 by jinkim2           #+#    #+#             */
+/*   Updated: 2022/05/07 19:16:14 by jinkim2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # include <stdlib.h>
 
@@ -20,7 +20,7 @@
 # endif
 
 # ifndef OPEN_MAX
-#  define OPEN_MAX 5
+#  define OPEN_MAX 256
 # endif
 
 size_t	ft_strlen(char	*str);
