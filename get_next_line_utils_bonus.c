@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jinkim2 <jinkim2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/28 17:15:11 by jinkim2           #+#    #+#             */
-/*   Updated: 2022/05/07 19:00:32 by jinkim2          ###   ########seoul.kr  */
+/*   Created: 2022/05/07 19:06:41 by jinkim2           #+#    #+#             */
+/*   Updated: 2022/05/07 19:07:38 by jinkim2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 size_t	ft_strlen(char	*str)
 {
